@@ -9,6 +9,35 @@ func TestBelow10(t *testing.T) {
 	}
 }
 
+var triangleTests = []struct {
+	input    int
+	expected int
+}{
+	{1, 1},
+	{2, 3},
+	{3, 6},
+	{4, 10},
+	{5, 15},
+	{6, 21},
+	{7, 28},
+	{8, 36},
+	{9, 45},
+	{10, 55},
+}
+
+func TestTriangleNumber(t *testing.T) {
+	for _, tt := range triangleTests {
+		if result := TriangleNumber(tt.input); result != tt.expected {
+			t.Errorf(
+				"TriangleNumber(%v) = %v, want %v",
+				tt.input,
+				result,
+				tt.expected,
+			)
+		}
+	}
+}
+
 func BenchmarkBelow10(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SumOfMultiples(10)

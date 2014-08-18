@@ -23,3 +23,9 @@ func SumOfMultiples(below_num int) (sum int) {
 	}
 	return sum
 }
+
+// TriangleNumber returns the nth triangle number.
+// For more info see: https://en.wikipedia.org/wiki/Triangular_number
+func TriangleNumber(nth_number int) int {
+	return (nth_number * (nth_number + 1)) / 2
+}
